@@ -19,12 +19,16 @@ fi
 
 cd public
 
-echo "hakemisto $pwd";
+echo "hakemisto $(pwd)";
 
 #cd ${INPUT_DIRECTORY}
 
 remote_repo="https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${REPOSITORY}.git"
 
+echo "$(remote_repo)"
+
 git push "${remote_repo}" HEAD:${INPUT_BRANCH} --follow-tags $_FORCE_OPTION;
 
-echo "hakemisto $pwd";
+git push "${remote_repo}" --follow-tags $_FORCE_OPTION;
+
+echo "hakemisto $(pwd)";
