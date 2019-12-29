@@ -17,7 +17,9 @@ if ${INPUT_FORCE}; then
     _FORCE_OPTION='--force'
 fi
 
-pwd
+cd public
+
+echo "hakemisto $pwd";
 
 #cd ${INPUT_DIRECTORY}
 
@@ -25,4 +27,4 @@ remote_repo="https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${REPOSITO
 
 git push "${remote_repo}" HEAD:${INPUT_BRANCH} --follow-tags $_FORCE_OPTION;
 
-pwd
+echo "hakemisto $pwd";
